@@ -49,3 +49,11 @@ print(param)
 print("")
 _ = param.optimize_mci()
 _ = param.optimize_mnl()
+
+
+param = Parameters.from_toml("scenario6.toml", "scenario6")
+print("Scenario 6")
+print(param)
+print("")
+_ = param.optimize_mci()
+_ = param.optimize_mnl()
