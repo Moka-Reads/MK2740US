@@ -1,8 +1,11 @@
 from dataclasses import dataclass
-import tomllib
+
 import numpy as np
-from scipy.optimize import differential_evolution
 import toml
+import tomllib
+from scipy.optimize import differential_evolution
+
+
 @dataclass
 class Parameters:
     alpha: np.ndarray

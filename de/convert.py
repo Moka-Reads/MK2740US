@@ -22,6 +22,7 @@ def convert_toml_to_tuple_style(input_path, output_path):
     print(f"✅ Converted TOML saved to {output_path}")
 
 # Example usage:
+convert_toml_to_tuple_style("scenario1.toml", "typst/scenario1.toml")
 convert_toml_to_tuple_style("scenario2.toml", "typst/scenario2.toml")
 convert_toml_to_tuple_style("scenario3.toml", "typst/scenario3.toml")
 convert_toml_to_tuple_style("scenario4.toml", "typst/scenario4.toml")
