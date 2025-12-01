@@ -71,15 +71,16 @@ class Parameters:
         return -total_R
 
     # ---------- Optimization ----------
-    def optimize_mnl(self):
+    def optimize_mnl(self, verbose=True, popsize=50, maxiter=1000):
         """Run differential evolution for MNL model."""
         bounds = [(self.p_min, self.p_max) for _ in range(len(self.alpha))]
         result = differential_evolution(
-            self.objective_mnl, bounds, popsize=50, maxiter=1000, tol=1e-6
+            self.objective_mnl, bounds, popsize=popsize, maxiter=maxiter, tol=1e-6
         )
-        print("(MNL) Optimal Prices:", result.x)
-        print("(MNL) Optimal Revenue:", -result.fun)
-        print("(MNL) Royalty/Platform:", self.r * result.x)
+        if verbose:
+            print("(MNL) Optimal Prices:", result.x)
+            print("(MNL) Optimal Revenue:", -result.fun)
+            print("(MNL) Royalty/Platform:", self.r * result.x)
         price_str = "(" + ", ".join(str(float(round(x, 4))) for x in result.x) + ")"
         royalty_str = "(" + ", ".join(str(float(round(x, 4))) for x in (self.r * result.x)) + ")"
 

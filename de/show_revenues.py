@@ -19,7 +19,7 @@ def show_platform_revenues():
         # Load parameters
         param = Parameters.from_toml(f"{scenario}.toml", scenario)
 
-        for model in ["mci", "mnl"]:
+        for model in ["mnl"]:
             try:
                 # Load results
                 with open(f"results/{scenario}_{model}.toml", "rb") as f:
